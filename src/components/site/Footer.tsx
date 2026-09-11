@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 
 import { Wordmark } from "@/components/site/Wordmark";
 import { navLinks, org } from "@/content/bricca";
@@ -64,7 +64,7 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
   );
 }
 
-function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
+function FooterLink({ to, children }: { to: LinkProps["to"]; children: React.ReactNode }) {
   return (
     <li>
       <Link
