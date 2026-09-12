@@ -11,7 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ComplianceRouteImport } from './routes/compliance'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DonateRouteImport } from './routes/donate'
+import { Route as FutureRouteImport } from './routes/future'
+import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -27,9 +33,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/donate',
+  path: '/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FutureRoute = FutureRouteImport.update({
+  id: '/future',
+  path: '/future',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedRoute = GetInvolvedRouteImport.update({
+  id: '/get-involved',
+  path: '/get-involved',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImpactRoute = ImpactRouteImport.update({
   id: '/impact',
   path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnersRoute = PartnersRouteImport.update({
@@ -56,7 +92,13 @@ const RecognitionRoute = RecognitionRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compliance': typeof ComplianceRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/future': typeof FutureRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
+  '/leadership': typeof LeadershipRoute
   '/partners': typeof PartnersRoute
   '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
@@ -65,7 +107,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compliance': typeof ComplianceRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/future': typeof FutureRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
+  '/leadership': typeof LeadershipRoute
   '/partners': typeof PartnersRoute
   '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
@@ -75,7 +123,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/compliance': typeof ComplianceRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/future': typeof FutureRoute
+  '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
+  '/leadership': typeof LeadershipRoute
   '/partners': typeof PartnersRoute
   '/programs': typeof ProgramsRoute
   '/projects': typeof ProjectsRoute
@@ -86,7 +140,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/compliance'
+    | '/contact'
+    | '/donate'
+    | '/future'
+    | '/get-involved'
     | '/impact'
+    | '/leadership'
     | '/partners'
     | '/programs'
     | '/projects'
@@ -95,7 +155,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/compliance'
+    | '/contact'
+    | '/donate'
+    | '/future'
+    | '/get-involved'
     | '/impact'
+    | '/leadership'
     | '/partners'
     | '/programs'
     | '/projects'
@@ -104,7 +170,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/compliance'
+    | '/contact'
+    | '/donate'
+    | '/future'
+    | '/get-involved'
     | '/impact'
+    | '/leadership'
     | '/partners'
     | '/programs'
     | '/projects'
@@ -114,7 +186,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ComplianceRoute: typeof ComplianceRoute
+  ContactRoute: typeof ContactRoute
+  DonateRoute: typeof DonateRoute
+  FutureRoute: typeof FutureRoute
+  GetInvolvedRoute: typeof GetInvolvedRoute
   ImpactRoute: typeof ImpactRoute
+  LeadershipRoute: typeof LeadershipRoute
   PartnersRoute: typeof PartnersRoute
   ProgramsRoute: typeof ProgramsRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -137,11 +215,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donate': {
+      id: '/donate'
+      path: '/donate'
+      fullPath: '/donate'
+      preLoaderRoute: typeof DonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/future': {
+      id: '/future'
+      path: '/future'
+      fullPath: '/future'
+      preLoaderRoute: typeof FutureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved': {
+      id: '/get-involved'
+      path: '/get-involved'
+      fullPath: '/get-involved'
+      preLoaderRoute: typeof GetInvolvedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/impact': {
       id: '/impact'
       path: '/impact'
       fullPath: '/impact'
       preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partners': {
@@ -178,7 +298,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ComplianceRoute: ComplianceRoute,
+  ContactRoute: ContactRoute,
+  DonateRoute: DonateRoute,
+  FutureRoute: FutureRoute,
+  GetInvolvedRoute: GetInvolvedRoute,
   ImpactRoute: ImpactRoute,
+  LeadershipRoute: LeadershipRoute,
   PartnersRoute: PartnersRoute,
   ProgramsRoute: ProgramsRoute,
   ProjectsRoute: ProjectsRoute,
